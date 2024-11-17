@@ -39,7 +39,15 @@ const Footer = () => {
                 <i className="fab fa-instagram text-2xl"></i>
               </a>
               <a
-                href="https://telegram.org"
+                href="https://t.me/Hikvision123"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-600 transition-transform transform hover:scale-110"
+              >
+                <i className="fab fa-telegram text-2xl"></i>
+              </a>
+              <a
+                href="https://t.me/Davlatxuja93"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-600 transition-transform transform hover:scale-110"
