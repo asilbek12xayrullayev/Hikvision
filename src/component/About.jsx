@@ -1,61 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 
-const ContactSection = () => {
+const SurveillancePage = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Modalni ochish
+  const openModal = (imageSrc) => {
+    setSelectedImage(imageSrc);
+  };
+
+  // Modalni yopish
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
+  const images = [
+    "https://www.shutterstock.com/shutterstock/photos/1538332502/display_1500/stock-photo-kyiv-ukraine-october-hikvision-thermal-camera-in-the-shop-1538332502.jpg", // Rasm 1 URL
+    "https://www.shutterstock.com/shutterstock/photos/1813877150/display_1500/stock-photo-manchester-united-kingdom-th-sept-cctv-ball-dome-camera-on-a-post-1813877150.jpg", // Rasm 2 URL
+    "https://www.shutterstock.com/shutterstock/photos/1694383729/display_1500/stock-photo-vilnius-lithuania-march-hikvision-video-surveillance-cameras-hikvision-is-a-chinese-1694383729.jpg", // Rasm 3 URL
+    "https://www.shutterstock.com/shutterstock/photos/1349944628/display_1500/stock-photo-milan-italy-august-hikvision-video-surveillance-cameras-on-pole-the-brand-is-1349944628.jpg", // Rasm 4 URL
+  ];
+
   return (
-    <div className="bg-gray-900 text-white py-12">
-      <h2 className="text-center text-2xl md:text-4xl font-bold mb-8">
-        Связаться с нами
-      </h2>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-6 px-4">
-        {/* Images */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="transition-transform transform hover:scale-110">
+    <div className="min-h-screen bg-gray-900 p-4 flex justify-center items-center">
+      {/* Chap tomonda rasmlar */}
+      <div className="grid grid-cols-2 gap-6 w-1/2">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="relative group cursor-pointer"
+            onClick={() => openModal(image)}
+          >
             <img
-              src="https://thumbs.dreamstime.com/z/kyiv-ukraine-october-hikvision-thermal-camera-shop-161880748.jpg?ct=jpeg"
-              alt="Camera 1"
-              className="rounded-lg shadow-lg"
+              src={image}
+              alt={`Camera ${index + 1}`}
+              className="rounded-lg shadow-lg w-full h-auto transform group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="transition-transform transform hover:scale-110">
+        ))}
+      </div>
+
+      {/* O'ng tomonda forma */}
+      <div className="flex flex-col items-start w-1/2 pl-10">
+        <input
+          type="text"
+          placeholder="Ваш номер телефона (например: +998901234567)"
+          className="p-3 w-full max-w-md rounded-lg shadow-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button className="mt-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition-colors duration-300">
+          Присоединяйтесь сейчас
+        </button>
+      </div>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <div className="relative">
             <img
-              src="https://thumbs.dreamstime.com/z/hikvision-exposition-stand-hangzhou-digital-technology-co-ltd-chinese-manufacturerof-video-surveillance-product-astana-170908473.jpg?ct=jpeg"
-              alt="Camera 2"
-              className="rounded-lg shadow-lg"
+              src={selectedImage}
+              alt="Selected"
+              className="max-w-full max-h-screen rounded-lg shadow-lg"
             />
-          </div>
-          <div className="transition-transform transform hover:scale-110">
-            <img
-              src="https://thumbs.dreamstime.com/z/milan-italy-august-hikvision-video-surveillance-cameras-pole-brand-widespread-throughout-world-143040559.jpg?ct=jpeg"
-              alt="Camera 3"
-              className="rounded-lg shadow-lg"
-            />
-          </div>
-          <div className="transition-transform transform hover:scale-110">
-            <img
-              src="https://thumbs.dreamstime.com/z/hikvision-cctv-camera-hikvision-street-cctv-camera-pole-monitoring-crime-parking-issues-196315199.jpg?ct=jpeg"
-              alt="Camera 4"
-              className="rounded-lg shadow-lg"
-            />
+            <button
+              className="absolute top-4 right-4 text-white text-2xl font-bold bg-gray-800 p-2 rounded-full hover:bg-gray-700 transition"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
           </div>
         </div>
-
-        {/* Form */}
-        <form className="flex flex-col gap-4 w-full max-w-md">
-          <input
-            type="text"
-            placeholder="Telefon raqamingiz (masalan: +998901234567)"
-            className="p-3 rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Join Now
-          </button>
-        </form>
-      </div>
+      )}
     </div>
   );
 };
 
-export default ContactSection;
+export default SurveillancePage;

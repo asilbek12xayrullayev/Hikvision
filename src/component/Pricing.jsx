@@ -76,7 +76,7 @@ const App = () => {
     <div className="bg-blue-900 text-white min-h-screen p-6">
       {/* Header */}
       <div className="text-center mb-8">
-        <p className="text-sm text-gray-300 animate-fade-in">Bizning dokon</p>
+        <p className="text-sm text-gray-300 animate-fade-in">Наш магазин</p>
         <h1 className="text-2xl font-bold animate-slide-in">
           Информация о камере и домофоне
         </h1>

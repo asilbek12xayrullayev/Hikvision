@@ -7,10 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left">
           {/* Logo va Ta'rif */}
           <div>
-            <h3 className="text-lg font-bold mb-2">StayHealthy</h3>
+            <h3 className="text-lg font-bold mb-2">Оставайтесьздоровыми</h3>
             <p className="text-sm mb-4">
-              Online Training And Consultation About Diet And Exercise Tailored
-              Based On User Needs.
+              Вы можете связаться с нами и получить консультацию. У нас вы можете получить подробную информацию о камере и техническую информацию.
             </p>
             <div className="flex justify-center md:justify-start gap-3">
               {/* Social Media Ikonkalari */}
@@ -46,27 +45,19 @@ const Footer = () => {
               >
                 <i className="fab fa-telegram text-2xl"></i>
               </a>
-              <a
-                href="https://t.me/Davlatxuja93"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-600 transition-transform transform hover:scale-110"
-              >
-                <i className="fab fa-telegram text-2xl"></i>
-              </a>
             </div>
           </div>
 
           {/* Product Links */}
           <div>
-            <h4 className="text-lg font-bold mb-2">Product</h4>
+            <h4 className="text-lg font-bold mb-2">Продукт</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#"
                   className="hover:text-gray-900 transition-all hover:translate-x-1"
                 >
-                  Gym Equipment
+                  О продукте Hikvision
                 </a>
               </li>
               <li>
@@ -74,7 +65,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-gray-900 transition-all hover:translate-x-1"
                 >
-                  Supplement
+                  Добавка
                 </a>
               </li>
               <li>
@@ -82,7 +73,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-gray-900 transition-all hover:translate-x-1"
                 >
-                  Blog
+                  Гарантия на продукт
                 </a>
               </li>
             </ul>
@@ -90,14 +81,14 @@ const Footer = () => {
 
           {/* Explore Links */}
           <div>
-            <h4 className="text-lg font-bold mb-2">Explore Us</h4>
+            <h4 className="text-lg font-bold mb-2">О нашем продукте</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#"
                   className="hover:text-gray-900 transition-all hover:translate-x-1"
                 >
-                  FAQ
+                  Ремонт в случае поломки товара
                 </a>
               </li>
               <li>
@@ -105,7 +96,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-gray-900 transition-all hover:translate-x-1"
                 >
-                  Privacy Policy
+                  Вы можете доверять нашему продукту
                 </a>
               </li>
               <li>
@@ -113,7 +104,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-gray-900 transition-all hover:translate-x-1"
                 >
-                  Term and Conditions
+                  Срок и варианты
                 </a>
               </li>
             </ul>
@@ -121,18 +112,17 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-bold mb-2">Contact</h4>
+            <h4 className="text-lg font-bold mb-2">Контакт</h4>
             <ul className="space-y-2 text-sm">
-              <li>hi@stayhealthy.com</li>
-              <li>021-123-636</li>
-              <li>stayhealthy.com</li>
+              <li>@Hikvision123</li>
+              <li>+998-(33)-367-86-86</li>
             </ul>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="text-center text-sm text-gray-500 mt-6">
-          © 2021 StayHealthy. All rights reserved.
+          © 2014 год текущий.
         </div>
       </div>
     </footer>
