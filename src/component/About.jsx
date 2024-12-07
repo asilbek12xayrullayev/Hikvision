@@ -1,70 +1,59 @@
 import React, { useState } from "react";
 
-const SurveillancePage = () => {
+const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Modalni ochish
-  const openModal = (imageSrc) => {
-    setSelectedImage(imageSrc);
-  };
-
-  // Modalni yopish
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
   const images = [
-    "https://www.shutterstock.com/shutterstock/photos/1538332502/display_1500/stock-photo-kyiv-ukraine-october-hikvision-thermal-camera-in-the-shop-1538332502.jpg", // Rasm 1 URL
-    "https://www.shutterstock.com/shutterstock/photos/1813877150/display_1500/stock-photo-manchester-united-kingdom-th-sept-cctv-ball-dome-camera-on-a-post-1813877150.jpg", // Rasm 2 URL
-    "https://www.shutterstock.com/shutterstock/photos/1694383729/display_1500/stock-photo-vilnius-lithuania-march-hikvision-video-surveillance-cameras-hikvision-is-a-chinese-1694383729.jpg", // Rasm 3 URL
-    "https://www.shutterstock.com/shutterstock/photos/1349944628/display_1500/stock-photo-milan-italy-august-hikvision-video-surveillance-cameras-on-pole-the-brand-is-1349944628.jpg", // Rasm 4 URL
+    "https://www.shutterstock.com/shutterstock/photos/1813877150/display_1500/stock-photo-manchester-united-kingdom-th-sept-cctv-ball-dome-camera-on-a-post-1813877150.jpg", // Bu yerga rasmlaringiz yo‘lini qo'shing
+    "https://www.shutterstock.com/shutterstock/photos/1538332502/display_1500/stock-photo-kyiv-ukraine-october-hikvision-thermal-camera-in-the-shop-1538332502.jpg",
+    "https://www.shutterstock.com/shutterstock/photos/1538332499/display_1500/stock-photo-kyiv-ukraine-october-hikvision-thermal-camera-in-the-shop-1538332499.jpg",
+    "https://www.shutterstock.com/shutterstock/photos/2445730585/display_1500/stock-photo-lviv-ukraine-april-hikvision-video-surveillance-cameras-on-pole-2445730585.jpg",
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 p-4 flex justify-center items-center">
-      {/* Chap tomonda rasmlar */}
-      <div className="grid grid-cols-2 gap-6 w-1/2">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="relative group cursor-pointer"
-            onClick={() => openModal(image)}
-          >
-            <img
-              src={image}
-              alt={`Camera ${index + 1}`}
-              className="rounded-lg shadow-lg w-full h-auto transform group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-        ))}
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-6">
+      <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className="relative group"
+              onClick={() => setSelectedImage(img)}
+            >
+              <img
+                src={img}
+                alt={`Camera ${index + 1}`}
+                className="w-full h-48 object-cover rounded-lg shadow-lg transform transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center">
+          <input
+            type="text"
+            placeholder="Ваш номер телефона (например: +998901234567)"
+            className="w-full p-3 mb-4 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button className="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600 transition duration-200">
+            Присоединяйтесь сейчас
+          </button>
+        </div>
       </div>
 
-      {/* O'ng tomonda forma */}
-      <div className="flex flex-col items-start w-1/2 pl-10">
-        <input
-          type="text"
-          placeholder="Ваш номер телефона (например: +998901234567)"
-          className="p-3 w-full max-w-md rounded-lg shadow-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <button className="mt-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition-colors duration-300">
-          Присоединяйтесь сейчас
-        </button>
-      </div>
-
-      {/* Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
           <div className="relative">
             <img
               src={selectedImage}
               alt="Selected"
-              className="max-w-full max-h-screen rounded-lg shadow-lg"
+              className="w-full max-w-3xl rounded-lg shadow-lg"
             />
             <button
-              className="absolute top-4 right-4 text-white text-2xl font-bold bg-gray-800 p-2 rounded-full hover:bg-gray-700 transition"
-              onClick={closeModal}
+              className="absolute top-2 right-2 bg-white rounded-full p-2 text-black"
+              onClick={() => setSelectedImage(null)}
             >
-              &times;
+              ✕
             </button>
           </div>
         </div>
@@ -73,4 +62,4 @@ const SurveillancePage = () => {
   );
 };
 
-export default SurveillancePage;
+export default App;
