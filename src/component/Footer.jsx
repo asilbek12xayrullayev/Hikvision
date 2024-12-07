@@ -30,7 +30,7 @@ const Footer = () => {
                 <i className="fab fa-facebook text-2xl"></i>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/hayrullobobonazarov?igsh=MW5mOWE5b3U4NGJ2Mg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-pink-500 hover:text-pink-700 transition-transform transform hover:scale-110"
