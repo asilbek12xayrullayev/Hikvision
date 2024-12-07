@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex justify-center md:justify-start gap-3">
               {/* Social Media Ikonkalari */}
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/hayrullo.bobonazarov.1?mibextid=ZbWKwL"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 transition-transform transform hover:scale-110"
